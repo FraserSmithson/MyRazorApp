@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MyRazorApp</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="~/js/site.js" asp-append-version="true" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a asp-page="/Index">Home</a></li>
-                <li><a asp-page="/News">News</a></li>
-                <li><a asp-page="/Staff/Index">Staff Directory</a></li>
-                <li><a asp-page="/Privacy">Privacy</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="header-container">
+            <a asp-page="/Index" class="brand">MyRazorApp</a>
+            <button id="burgerToggle" class="burger-btn" type="button" aria-label="Toggle navigation menu" aria-controls="primaryNav" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+            <nav id="primaryNav" class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/News">News</a></li>
+                    <li><a asp-page="/Staff/Index">Staff</a></li>
+                    <li><a asp-page="/Privacy">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <title>@ViewData["Title"]</title>
         @RenderBody()
     </main>
 
